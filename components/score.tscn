@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://bedmr1msdern6"]
+
+[ext_resource type="Script" path="res://scripts/score.gd" id="1_twyll"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_txfm0"]
+font_size = 42
+
+[node name="Score" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_twyll")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "0"
+label_settings = SubResource("LabelSettings_txfm0")

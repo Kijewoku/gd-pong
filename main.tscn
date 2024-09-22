@@ -1,30 +1,33 @@
-[gd_scene load_steps=4 format=3 uid="uid://c44ol8ejjte6a"]
+[gd_scene load_steps=5 format=3 uid="uid://c44ol8ejjte6a"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_7mowc"]
 [ext_resource type="PackedScene" uid="uid://4f1j2v3yxsi2" path="res://components/paddle.tscn" id="1_xm84y"]
 [ext_resource type="PackedScene" uid="uid://btrofwss2ttp5" path="res://components/ball.tscn" id="2_gnxkl"]
+[ext_resource type="PackedScene" uid="uid://bedmr1msdern6" path="res://components/score.tscn" id="4_t6atc"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_7mowc")
 
 [node name="PaddleLeft" parent="." instance=ExtResource("1_xm84y")]
-position = Vector2(34, 339)
+position = Vector2(10, 292)
 
 [node name="PaddleRight" parent="." instance=ExtResource("1_xm84y")]
-position = Vector2(1049, 339)
+position = Vector2(1118, 295)
 side = 1
 
 [node name="Ball" parent="." instance=ExtResource("2_gnxkl")]
 position = Vector2(557, 352)
 
-[node name="Player1ScoreLabel" type="Label" parent="."]
-offset_left = 20.0
-offset_top = 24.0
-offset_right = 60.0
-offset_bottom = 47.0
+[node name="Player1Score" parent="." instance=ExtResource("4_t6atc")]
+offset_left = 498.0
+offset_top = 10.0
+offset_right = 498.0
+offset_bottom = 10.0
+player_id = 1
 
-[node name="Player2ScoreLabel" type="Label" parent="."]
-offset_left = 1133.0
-offset_top = 19.0
-offset_right = 1173.0
-offset_bottom = 42.0
+[node name="Player2Score" parent="." instance=ExtResource("4_t6atc")]
+offset_left = 620.0
+offset_top = 11.0
+offset_right = 620.0
+offset_bottom = 11.0
+player_id = 2
