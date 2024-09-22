@@ -1,6 +1,7 @@
 extends Area2D
 
 @export var speed: float = 300.0
+
 var direction = Vector2.ZERO
 var side_options = [ct.Side.LEFT, ct.Side.RIGHT]
 
@@ -12,6 +13,10 @@ func _process(delta):
 	move_ball(delta)
 	handle_screen_bounce()
 	check_goal()
+	
+func position_ball():
+	var screen_size = get_viewport_rect().size
+	self.position = screen_size / 2
 
 func set_initial_direction():
 	direction = choose_direction().normalized()

@@ -9,7 +9,7 @@
 script = ExtResource("1_7mowc")
 
 [node name="PaddleLeft" parent="." instance=ExtResource("1_xm84y")]
-position = Vector2(10, 292)
+position = Vector2(10, 12)
 
 [node name="PaddleRight" parent="." instance=ExtResource("1_xm84y")]
 position = Vector2(1118, 295)

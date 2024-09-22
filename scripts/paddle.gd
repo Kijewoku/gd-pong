@@ -18,3 +18,15 @@ func _physics_process(delta):
 
 	velocity = direction.normalized() * speed
 	move_and_slide()
+
+func position_paddle():
+	var screen_size = get_viewport_rect().size
+	var y_pos = (screen_size.y / 2) - 50
+
+	if side == ct.Side.LEFT:
+		self.position.x = 10
+		self.position.y = y_pos
+
+	if side == ct.Side.RIGHT:
+		self.position.x = screen_size.x - 30
+		self.position.y = y_pos
