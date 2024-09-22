@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://c44ol8ejjte6a"]
+[gd_scene load_steps=3 format=3 uid="uid://c44ol8ejjte6a"]
 
 [ext_resource type="PackedScene" uid="uid://4f1j2v3yxsi2" path="res://components/paddle.tscn" id="1_xm84y"]
+[ext_resource type="PackedScene" uid="uid://btrofwss2ttp5" path="res://components/ball.tscn" id="2_gnxkl"]
 
 [node name="Main" type="Node2D"]
 
@@ -10,3 +11,6 @@ position = Vector2(34, 339)
 [node name="PaddleRight" parent="." instance=ExtResource("1_xm84y")]
 position = Vector2(1049, 339)
 side = 1
+
+[node name="Ball" parent="." instance=ExtResource("2_gnxkl")]
+position = Vector2(557, 352)

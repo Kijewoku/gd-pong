@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://btrofwss2ttp5"]
+
+[ext_resource type="Script" path="res://scripts/ball.gd" id="1_khgxt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ocnsb"]
+
+[node name="Ball" type="Area2D"]
+script = ExtResource("1_khgxt")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+offset = Vector2(-10, -10)
+
+[node name="ColorRect" type="ColorRect" parent="Sprite2D"]
+offset_right = 20.0
+offset_bottom = 20.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(10, 10)
+shape = SubResource("RectangleShape2D_ocnsb")
