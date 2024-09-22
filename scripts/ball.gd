@@ -11,6 +11,7 @@ func _ready():
 func _process(delta):
 	move_ball(delta)
 	handle_screen_bounce()
+	check_goal()
 
 func set_initial_direction():
 	direction = choose_direction().normalized()
@@ -36,3 +37,22 @@ func _on_Ball_body_entered(body):
 
 func reverse_horizontal_direction():
 	direction.x = -direction.x
+
+func who_goal():
+	if (position.x >= get_viewport_rect().size.x):
+		return 1
+	
+	if (position.x <= 0):
+		return 2
+	
+	return 0
+	
+
+func check_goal():
+	if who_goal() == 1:
+		return get_parent().add_point_to_player1()
+		
+	if who_goal() == 2:
+		return get_parent().add_point_to_player2()
+		
+	pass
