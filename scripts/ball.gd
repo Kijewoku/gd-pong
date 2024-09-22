@@ -6,6 +6,7 @@ var side_options = [ct.Side.LEFT, ct.Side.RIGHT]
 
 func _ready():
 	set_initial_direction()
+	connect("body_entered", Callable(self, "_on_Ball_body_entered"))
 
 func _process(delta):
 	move_ball(delta)
@@ -15,7 +16,7 @@ func set_initial_direction():
 	direction = choose_direction().normalized()
 
 func choose_direction() -> Vector2:
-	var side = side_options[randi() % side_options.size()];
+	var side = side_options[randi() % side_options.size()]
 	
 	if side == ct.Side.LEFT:
 		return Vector2(-1, randf_range(-0.5, 0.5))
@@ -30,7 +31,8 @@ func handle_screen_bounce():
 		direction.y = -direction.y
 
 func _on_Ball_body_entered(body):
-	reverse_horizontal_direction()
+	if body.is_in_group("paddle"):
+		reverse_horizontal_direction()
 
 func reverse_horizontal_direction():
 	direction.x = -direction.x
