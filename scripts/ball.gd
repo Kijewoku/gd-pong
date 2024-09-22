@@ -33,7 +33,7 @@ func move_ball(delta):
 	position += direction * speed * delta
 
 func handle_screen_bounce():
-	if position.y <= 0 or position.y >= get_viewport_rect().size.y:
+	if position.y <= 0 or position.y >= get_viewport_rect().size.y - 20:
 		direction.y = -direction.y
 
 func _on_Ball_body_entered(body):
